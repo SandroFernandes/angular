@@ -9,7 +9,26 @@ export class ServerComponent {
   serverId: number = 10;
   serverStatus: string = 'offline';
 
-  getServerStatus() {
-    return this.serverStatus;
+
+  constructor(){
+   // setInterval(this.updateStatus,1000)
   }
+
+  getColor(){
+    return this.serverStatus === 'online' ? 'green' : 'red';
+  }
+
+
+  getServerStatus() {
+    console.log('getStatus ->',this.serverStatus)
+    return this.serverStatus;
+
+  }
+
+  updateStatus(){
+    console.log('update->',this.serverStatus)
+    return this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
+
+  }
+
 }
