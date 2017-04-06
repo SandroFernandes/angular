@@ -9,8 +9,9 @@ import {Component, OnInit} from '@angular/core';
 
 export class ServerTesteComponent implements OnInit {
   allowAddServer = false;
-  serverCreationStatus = "Server was not created !";
+  serverCreationStatus = '';
   serverName = 'Teste example';
+  userName = '';
 
   constructor() {
     setTimeout(() => {
@@ -30,5 +31,9 @@ export class ServerTesteComponent implements OnInit {
   onUpdateServerName(event: Event) {
     this.serverName = (<HTMLInputElement>event.target).value;
     console.log(event);
+  }
+
+  onClickClearUserName(event:Event){
+    this.userName = '';
   }
 }

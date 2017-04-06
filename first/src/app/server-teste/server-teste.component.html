@@ -1,15 +1,12 @@
-<!--<input type="text"-->
-       <!--class="form-control"-->
-       <!--(input)="onUpdateServerName($event)"-->
-      <!--/>-->
+<input type="text"
+       class="form-control"
+       (input)="onUpdateServerName($event)"
+/>
 
 <input type="text"
        class="form-control"
        [(ngModel)]="serverName"
-       />
-
-<p>{{serverName}}</p>
-<br/>
+/>
 
 <button
   class="btn btn-primary"
@@ -17,7 +14,35 @@
   (click)="onCreateServer()">Add a server
 </button>
 
-<P>{{serverCreationStatus}}</P>
+<P *ngIf="serverCreationStatus.length>0; else noServer">{{serverCreationStatus}}</P>
+
+    <ng-template #noServer>
+      <p>No server defined so far !</p>
+    </ng-template>
+
+<hr>
+<p>{{serverName}}</p>
+<br/>
+<hr>
+
+<label>User Name:
+  <input type="text"
+         class="form-control"
+         [(ngModel)]="userName"
+  />
+</label>
+
+<p>The username is:{{userName}}</p>
+
+<button
+  class="btn btn-primary"
+  [disabled]="userName.length<=0"
+  (click)="onClickClearUserName()">Clear name Field
+</button>
+
+
+<hr>
+
 
 <p>This is a string interpolation: {{allowAddServer}}</p>
 

@@ -8,6 +8,7 @@ import {ServerComponent} from './server/server.compoment';
 import {ServerTesteComponent} from './server-teste/server-teste.component';
 import { WarningComponent } from './warning/warning.component';
 import { SucessComponent } from './sucess/sucess.component';
+import { NameComponent } from './name/name.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { SucessComponent } from './sucess/sucess.component';
     ServerComponent,
     ServerTesteComponent,
     WarningComponent,
-    SucessComponent
+    SucessComponent,
+    NameComponent
   ],
   imports: [
     BrowserModule,
