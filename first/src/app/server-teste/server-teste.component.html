@@ -49,5 +49,5 @@
 <span>This is a property binging: <span [innerText]="allowAddServer"></span> </span>
 
 
-<app-server></app-server>
-<app-server></app-server>
+<app-server *ngFor="let server of servers" ></app-server>
+
